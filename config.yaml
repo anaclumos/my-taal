@@ -32,6 +32,11 @@ mcp:
       - start
   clerk:
     url: https://mcp.clerk.com/mcp
+  hugeicons:
+    command: npx
+    args:
+      - -y
+      - "@hugeicons/mcp-server"
 skills:
   paths:
     - ~/.taal/skills
