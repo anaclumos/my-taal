@@ -1,0 +1,46 @@
+version: "1"
+mcp:
+  atlassian:
+    command: uvx
+    args:
+      - mcp-atlassian
+    env:
+      CONFLUENCE_URL: "{env:CONFLUENCE_URL}"
+      CONFLUENCE_USERNAME: "{env:CONFLUENCE_USERNAME}"
+      CONFLUENCE_API_TOKEN: "{env:CONFLUENCE_API_TOKEN}"
+  context7:
+    url: https://mcp.context7.com/mcp
+    headers:
+      CONTEXT7_API_KEY: "{env:CONTEXT7_API_KEY}"
+  tanstack:
+    url: https://tanstack.com/api/mcp
+    headers:
+      Authorization: "Bearer {env:TANSTACK_API_KEY}"
+  motion:
+    command: npx
+    args:
+      - -y
+      - https://api.motion.dev/registry.tgz?package=motion-studio-mcp&version=latest
+    env:
+      TOKEN: "{env:MOTION_PLUS_TOKEN}"
+  convex:
+    command: npx
+    args:
+      - -y
+      - convex@latest
+      - mcp
+      - start
+skills:
+  paths:
+    - ~/.taal/skills
+providers:
+  enabled:
+    - claude-desktop
+    - claude-code
+    - cursor
+    - continue
+    - zed
+    - opencode
+    - codex
+    - windsurf
+    - antigravity
