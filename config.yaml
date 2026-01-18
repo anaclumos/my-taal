@@ -30,6 +30,8 @@ mcp:
       - convex@latest
       - mcp
       - start
+  clerk:
+    url: https://mcp.clerk.com/mcp
 skills:
   paths:
     - ~/.taal/skills
