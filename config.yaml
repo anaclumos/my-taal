@@ -12,10 +12,6 @@ mcp:
     url: https://mcp.context7.com/mcp
     headers:
       CONTEXT7_API_KEY: "{env:CONTEXT7_API_KEY}"
-  tanstack:
-    url: https://tanstack.com/api/mcp
-    headers:
-      Authorization: "Bearer {env:TANSTACK_API_KEY}"
   motion:
     command: npx
     args:
