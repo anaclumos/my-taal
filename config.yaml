@@ -1,5 +1,10 @@
 version: "1"
 mcp:
+  taal:
+    command: bunx
+    args:
+      - --bun
+      - taal-mcp
   atlassian:
     command: uvx
     args:
@@ -12,27 +17,39 @@ mcp:
     url: https://mcp.context7.com/mcp
     headers:
       CONTEXT7_API_KEY: "{env:CONTEXT7_API_KEY}"
-  motion:
-    command: npx
-    args:
-      - -y
-      - https://api.motion.dev/registry.tgz?package=motion-studio-mcp&version=latest
-    env:
-      TOKEN: "{env:MOTION_PLUS_TOKEN}"
   convex:
-    command: npx
+    command: bunx
     args:
-      - -y
+      - --bun
       - convex@latest
       - mcp
       - start
   clerk:
     url: https://mcp.clerk.com/mcp
   hugeicons:
-    command: npx
+    command: bunx
     args:
-      - -y
+      - --bun
       - "@hugeicons/mcp-server"
+  github:
+    command: bunx
+    args:
+      - --bun
+      - "@modelcontextprotocol/server-github"
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: "{env:GITHUB_PAT}"
+  next-devtools:
+    command: bunx
+    args:
+      - --bun
+      - next-devtools-mcp@latest
+  playwright:
+    command: mcp-server-playwright
+  motion:
+    command: bunx
+    args:
+      - --bun
+      - https://api.motion.dev/registry.tgz?package=motion-studio-mcp&version=latest
 skills:
   paths:
     - ~/.taal/skills
