@@ -24,8 +24,12 @@ mcp:
       - convex@latest
       - mcp
       - start
-  # clerk:
-  #   url: https://mcp.clerk.com/mcp
+  sentry:
+    url: https://mcp.sentry.dev/mcp
+  vercel:
+    url: https://mcp.vercel.com
+  clerk:
+    url: https://mcp.clerk.com/mcp
   # hugeicons:
   #   command: bunx
   #   args:
